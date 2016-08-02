@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div>
+    <acme-navbar />
+  </div>
+
+  <div class="jumbotron text-center">
+    <h4>{{main.title}}</h4>
+    <form name="form">
+      <div class="row" ng-repeat="choice in main.options">
+        <div class="col-sm-offset-4 col-sm-4 col-xs-10">
+          <input type="text" class="form-control" ng-model="choice.name">
+        </div>
+        <div class="col-sm-1 col-xs-2">
+          <button class="btn btn-default" ng-click="main.options.push({})" ng-if="($index + 1) === main.options.length">+</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <buttton class="btn btn-primary" ng-click="main.makeDecision()">Make Decision</buttton>
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <h5>{{main.decision}}</h5>
+    </div>
+  </div>
+
+</div>
